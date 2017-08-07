@@ -67,13 +67,24 @@ h1 {
   padding: 30px;
   }
 #footer {
-    height: 75px;
+    height: 50px;
     background-color: #5c6672;
     margin: 20px;
     border-radius: 20px;
+    padding: 25px;
+
   }
 
-#footer
+#footer p{
+
+  color: #b8d7ea;
+}
+#footer a{
+
+  color: #52dee5;
+
+
+}
 
   #main-content li {
     margin: 0 0 10px 0;
