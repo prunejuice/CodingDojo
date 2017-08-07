@@ -19,7 +19,7 @@
 
 #container {
   width: 970px;
-  height: 500px;
+  height: 1000px;
   margin: 0 auto;
   background: linear-gradient(to bottom right, #1e0d12, #6f5964);
 }
@@ -63,4 +63,17 @@
 
 #aboutme p{
   padding: 5px;
+}
+
+.subcontents{
+  width: 285px;
+  height: 555px;
+  background: linear-gradient(to right, #fffeff, #dbccda);
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: top;
+}
+
+#portfolio-header{
+
 }
