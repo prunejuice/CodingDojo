@@ -75,5 +75,23 @@
 }
 
 #portfolio-header{
+  width: 285px;
+  height: 45px;
+  background: linear-gradient(#878593, #9b9aa3);
+}
 
+#portfolio-header h2{
+    color: white;
+    padding: 10px;
+}
+
+#portfolio-header-2 {
+  width: 285px;
+  height: 30px;
+  background: linear-gradient(#878593, #9b9aa3);
+}
+#portfolio-header-2  h3{
+
+  color:white;
+  padding:5px;
 }
