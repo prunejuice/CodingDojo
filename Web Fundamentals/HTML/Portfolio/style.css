@@ -37,52 +37,25 @@
   font-size: 25px;
 }
 .row {
- padding: 20px;
+  display:block;
+ /*padding: 20px;*/
+ overflow: hidden;
 }
 
-#about{
-
-  /*margin: 20px;*/
-  border: 5px solid #c0c0c0;
-  display: inline-block;
-  float:left;
-  vertical-align: top;
-  width: 48%;
-  margin-right: 20px;
+.about img {
+    border: 5px solid #c0c0c0;
 }
 
-#aboutme {
-  background: linear-gradient(to right, #fffeff, #dbccda);
-  display: inline-block;
+.aboutme .content {
   min-height: 288px;
-  /*margin-top: 20px;*/
-  width: 48%;
-  vertical-align: top;
 }
 
-#aboutheader{
-  height: 45px;
-  background: linear-gradient(#878593, #9b9aa3);
-}
 
-#aboutheader h2{
-  color: white;
-  padding: 10px;
-}
-
-#aboutme p{
+.content-block p,
+.content-block a {
   padding: 5px;
 }
 
-.subcontents{
-  width: 30%;
-  min-height: 600px;
-  background: linear-gradient(to right, #fffeff, #dbccda);
-  display: inline-block;
-  /*margin-left: 20px;*/
-  vertical-align: center;
-  margin-right: 20px;
-}
 
 #portfolio-header{
   width: 100%;;
@@ -92,7 +65,7 @@
 
 #portfolio-header h2{
     color: white;
-    padding: 10px;
+
 }
 
 #portfolio-header-2 {
@@ -106,8 +79,52 @@
   padding:5px;
 }
 #portfolio-contents{
-
+  margin-bottom: 50px;
 }
 #portfolio-contents img{
   width: 100%;
+}
+
+.techimages img{
+  display: inline;
+  width: 20%;
+  float: left;
+
+}
+.subcontents-content{
+  margin: 20px;
+  min-height: 600px;
+  background: linear-gradient(to right, #fffeff, #dbccda);
+}
+
+
+
+.about.content-wrapper,
+.aboutme.content-wrapper {
+  width: 50%;
+}
+
+.subcontents.content-wrapper {
+  width: 33.33%;
+}
+
+.content-wrapper {
+  /* don't define width here */
+  float: left;
+  display: inline-block;
+  vertical-align: top;
+}
+.content-wrapper .content {
+  margin: 20px;
+}
+.content-wrapper .content .content-block {
+  padding: 10px;
+  background: linear-gradient(to right, #fffeff, #dbccda);
+}
+.content-wrapper .content .content-header {
+  background: linear-gradient(#878593, #9b9aa3);
+}
+.content-wrapper .content .content-header h2 {
+  color: white;
+  padding: 10px;
 }
