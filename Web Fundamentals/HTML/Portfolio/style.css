@@ -99,22 +99,53 @@
 
 .aboutme .content-block{
   min-height: 237px;
+
 }
 
 
 .subcontents.content-wrapper {
   width: 33.33%;
-}
-
-.subcontents .content-block img{
-  width: 20%;
-}
-
-.techimages img{
-  display: inline;
-  width: 20%;
+  display: inline-block;
+  vertical-align: top;
   float: left;
+}
 
+
+.content-block .techimages{
+
+  padding: 10px;
+}
+
+.subcontents .content-block p {
+  padding-bottom: 80px;
+
+}
+.subcontents .content-block img{
+  width: 100%;
+}
+
+.subcontents .content-block .techimages img{
+  display: inline;
+  width: 18%;
+  padding: 1px;
+
+}
+
+.subcontents .content-block button{
+  position: relative;
+  left: 35%;
+  background-color: #407d61;
+  font-size: 16px;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.subcontents .content-block .techimages{
+  min-height: 100px;
 }
 
 .subcontents .content-block
