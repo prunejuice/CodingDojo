@@ -1,0 +1,29 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+.wrapper {
+  width: 970px;
+  margin: 0 auto;
+
+}
+
+.content-block{
+  min-height: 200px;
+  background-color: #245076;
+}
+
+.float-right{
+
+    float: right;
+    position: relative;
+    right: 30px;
+    color: white;
+}
+
+
+.float-right a{
+ color: yellow;
+}
