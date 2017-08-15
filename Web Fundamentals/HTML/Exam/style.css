@@ -1,0 +1,16 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper{
+  width: 970px;
+  margin: 0px auto;
+  background-color: #eee;
+}
+
+
+.navigation-bar{
+  background-color: black;
+  min-height: 25px;
+}
