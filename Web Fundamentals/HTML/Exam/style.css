@@ -4,7 +4,10 @@
 }
 
 body {
-  background-color: black;
+  background-color: #0e0e0e;
+  font-family: 'Arvo';
+  font-style: normal;
+  font-size: 12px;
 }
 
 .wrapper {
@@ -24,7 +27,6 @@ body {
 
 .nav-links ul {
   list-style-type: none;
-
   float: right;
 }
 
@@ -36,7 +38,7 @@ body {
   border-left: 1px solid white;
 }
 
-.nav-links ul li a {
+.nav-links ul li a, .footer-support-links ul li a {
     text-decoration: none;
     padding: 15px;
     color: white;
@@ -69,9 +71,9 @@ vertical-align: top;
   overflow: hidden;
 }
 
-.content h2,
+
 .content p {
-  padding-top: 17px;
+  padding-top: 20px;
 }
 
 .content h2 {
@@ -81,7 +83,7 @@ vertical-align: top;
   font-weight: lighter;
 }
 .content-link {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 .content-link a {
   float: right;
@@ -121,12 +123,12 @@ vertical-align: top;
   float: left;
   background-color: #eaeaea;
   border-left: 2px solid white;
-  min-height: 300px;
+  min-height: 200px;
 
 
 }
 
-.subcontents h3, .bottom-content h3, .subcontents-right-text h3 {
+.subcontents h3, .bottom-content h3, .subcontents-right-text h3, .footer-subcontents h3 {
   font-family: 'Arvo';
   font-size: 20px;
   font-style: normal;
@@ -147,16 +149,24 @@ vertical-align: top;
 
 .subcontents-text p {
   padding: 10px;
+
 }
 
-.subcontents-right-text img {
-  vertical-align: middle;
+.subcontents-right-text{
+  display: inline-block;
+  width: 60%;
+}
+.subcontents-right-image {
+  width: 40%;
+  float: right;
+  display: inline-block;
 }
 
 .footer .content-footer {
-  min-height: 300px;
-  background-color: black;
-  width: 100%;
+  min-height: 250px;
+  background-color: #0e0e0e;
+  padding: 10px;
+  padding-left: 30px;
 }
 
 .footer-bottom .content-footer {
@@ -169,4 +179,117 @@ vertical-align: top;
 
 .subcontents-heading {
   display: inline-block;
+}
+
+.footer-subcontents{
+  width:33%;
+  display: inline-block;
+  float: left;
+
+}
+
+.footer-subcontents h3 {
+  color: white;
+}
+
+.content-wrapper .footer-subcontents {
+
+}
+
+.footer-subcontents li {
+  color: white;
+}
+
+.subcontents-text, .subcontents-right-text p, .left-content .content p, .bottom-content p, .footer-subcontents li {
+  color: #7e7c81;
+}
+
+.footer-support-links ul li {
+
+    border-bottom: .5px solid #2e2d2d;
+    list-style-type: none;
+    padding: 7px 0;
+    margin-right: 30px;
+}
+
+.footer-support-links {
+  padding-top: 10px;
+}
+
+.footer-form {
+  color: white;
+
+}
+
+
+.form-top {
+  width:100%;
+  padding-top: 20px;
+
+  }
+.form-top div input {
+  width: 90%;
+  background-color: gray;
+  border: 1px solid black;
+  color: #d3d8d8;
+  padding: 5px;
+}
+.form-top div {
+  display: inline-block;
+  width: 37%;
+  float: left;
+}
+
+.form-bottom {
+  width: 100%;
+  padding-top: 50px;
+}
+
+.form-bottom div {
+  width: 100%;
+  display: inline;
+}
+
+.form-bottom div input {
+  width: 70%;
+  display: inline-block;
+  background-color: gray;
+  border: 1px solid black;
+  color: #d3d8d8;
+  padding: 5px;
+}
+
+.form-bottom button {
+  width: 25%;
+  display: inline-block;
+  background: linear-gradient(#050505, #7d7070);
+  border: none;
+  color: white;
+  padding: 5px;
+
+}
+
+.footer-contact-text ul li {
+  list-style-type: none;
+  color: white;
+  padding: 5px 0;
+  padding-left: 3px;
+}
+
+.footer-contact-text .contact-email {
+  padding-top: 30px;
+}
+
+.footer-bottom .content-footer {
+  text-align: center;
+  font-family: 'Arvo';
+  font-style: normal;
+  font-size: 12px;
+  color: #7e7c81;
+  position: relative;
+  top: 15px;
+}
+
+hr {
+  padding-bottom: 10px;
 }
