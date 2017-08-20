@@ -71,6 +71,9 @@ vertical-align: top;
   overflow: hidden;
 }
 
+.navigation-bar .img-width {
+  width: 30%;
+}
 
 .content p {
   padding-top: 20px;
@@ -125,7 +128,6 @@ vertical-align: top;
   border-left: 2px solid white;
   min-height: 200px;
 
-
 }
 
 .subcontents h3, .bottom-content h3, .subcontents-right-text h3, .footer-subcontents h3 {
@@ -140,6 +142,7 @@ vertical-align: top;
   display: inline-block;
   float: left;
 }
+
 
 .subcontents:first-child {
   border-left: none;
