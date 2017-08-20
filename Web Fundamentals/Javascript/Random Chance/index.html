@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      function game(quarters) {
+
+        for (var i = quarters; i >= 0; i--) {
+
+          var winningnumber = Math.floor(Math.random() * (100-1+1)) + 100;
+
+          var usernumber = Math.floor(Math.random() * (100-1+1)) + 100
+          var winnings = Math.floor(Math.random() * (100-50+1)) + 50;
+          console.log(winningnumber, usernumber);
+          quarters = i;
+          if (winningnumber == usernumber){
+
+            i = 90 + winnings;
+            return i;
+          }
+
+
+        }
+        return quarters;
+      }
+
+      console.log(game(50));
+
+
+
+    </script>
+
+  </body>
+</html>
