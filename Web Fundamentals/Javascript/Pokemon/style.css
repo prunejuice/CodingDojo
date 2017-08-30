@@ -11,12 +11,25 @@
 
 .images {
   display: inline-block;
-  width: 100%;
+  width: 70%;
 
 }
 
+.info {
+  width: 30%;
+}
 
 .images img {
   width: 25%;
   float: left;
+}
+
+.row {
+  width: 100%;
+}
+
+.pokedex {
+  width: 100%;
+  min-height: 600px;
+
 }
