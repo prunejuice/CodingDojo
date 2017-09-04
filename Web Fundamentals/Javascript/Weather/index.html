@@ -8,20 +8,16 @@
     <script type="text/javascript">
 
       $(document).ready(function() {
-
+          var html_str = "";
           $("form").submit(function(event) {
             event.preventDefault();
             var values = $( this ).serialize();
             var city = values.substring(5, values.length);
-            var html_str = "";
-            html_str += "<h1>" + city + "</h1>"
-            $.get("http://api.openweathermap.org/data/2.5/weather?q=" + city, function(res) {
-
-              console.log(res);
-
-
+            $.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=81ad92d1f0b6f60fdc8ec324c4248987", function(res) {
+              html_str += "<h1>" + city + "</h1>"
+              html_str += "<h2>Temperature:" + res.main.temp + "</h2>"
+              $(".results").html(html_str);
             }, "json");
-            $(".results").html(html_str);
           });
 
 
