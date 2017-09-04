@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+
+          $("form").submit(function(event) {
+            event.preventDefault();
+            var values = $( this ).serialize();
+            var city = values.substring(5, values.length);
+            var html_str = "";
+            html_str += "<h1>" + city + "</h1>"
+            $.get("http://api.openweathermap.org/data/2.5/weather?q=" + city, function(res) {
+
+              console.log(res);
+
+
+            }, "json");
+            $(".results").html(html_str);
+          });
+
+
+      });
+
+
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <form>
+          <input type="text" name="city" />
+          <button type="submit">Search</button>
+        </form>
+        <div class="results">
+
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
