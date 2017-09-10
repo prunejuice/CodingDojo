@@ -8,7 +8,7 @@
     <script type="text/javascript">
 
       $(document).ready(function() {
-        for (var i = 1; i < 151; i++) {
+        for (var i = 1; i < 300; i++) {
           $(".images").append(`<img id="${i}"src="http://pokeapi.co/media/img/${i}.png">`);
           };
 
@@ -22,7 +22,7 @@
               console.log(res);
               var html_str ="";
               html_str += "<h3>" + res.name + "</h3>";
-              html_str += 'img src="http://pokeapi.co/media/img/' + id + 'png">';
+              html_str += '<img src="http://pokeapi.co/media/img/' + id + '.png">';
               html_str += "<h4>Types</h4>";
               for (var i = 0; i < res.types.length; i++){
                 html_str += "<ul><li>"+ res.types[i].type.name + "</li>  </ul>";

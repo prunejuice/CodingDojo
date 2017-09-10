@@ -1,0 +1,3 @@
+After running pip install django it showed that django was installed as well as a dependent package called pyz
+Pip list simply depicts installed packages, whilst pip freeze shows installed packages in a requirements format.
+Pip search finds the keyword in all packages' name and summaries
