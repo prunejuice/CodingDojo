@@ -17,6 +17,7 @@ x.sort()
 y = []
 for num in range(len(x)/2):
     y.append(x[num])
+
 print y
 x[0] = y
 print x
