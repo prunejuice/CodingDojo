@@ -1,9 +1,17 @@
-def inputtest(variable):
-    if type(variable) is list:
-        for i in variable:
-            print i
+def inputtest(list1, list2):
+    for i in range(0, len(list1)):
+        if list1[i] != list2[i]:
+            same = False
+        else:
+            same = True
+
+    if same:
+        print "Lists are same"
+    else:
+        print "Lists are different"
 
 
-l = ['magical unicorns', 19, 'hello', 98.98, 'world']
+list_one = ['celery','carrots','bread','milk']
+list_two = ['celery','carrots','bread','cream']
 
-inputtest(l)
+inputtest(list_one, list_two)
