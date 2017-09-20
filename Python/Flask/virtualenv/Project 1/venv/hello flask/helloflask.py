@@ -5,8 +5,11 @@ app.secret_key = 'bcxjnmkbnhbfrvsghfn'
 
 @app.route('/')
 def index():
-    session[ 'count' ] += 1
-    return render_template("index.html", count = session [ 'count' ])  # Return 'Hello World!' to the response.
+    # try:
+    #     # session['count'] += 1
+    # except:
+    #     "No Key yet"
+    return render_template("index.html", count = session['count'])  # Return 'Hello World!' to the response.
 
 
 # @app.route('/reset', methods=['POST'])
@@ -14,14 +17,14 @@ def index():
 #     # global name
 #     session[ 'count' ] = 0
 #     return redirect('/')
-
-@app.route('/', methods=['POST'])
-def result():
-    if request.form['action'] == "increment":
-        session['count'] += 1
-    elif request.form['action'] == "reset":
-        session['count'] = 0
-    return redirect('/')
+#
+# @app.route('/', methods=['POST'])
+# def result():
+#     if request.form['action'] == "increment":
+#         session['count'] += 1
+#     elif request.form['action'] == "reset":
+#         session['count'] = 0
+#     return redirect('/')
 
 
 app.run(debug=True)      # Run the app in debug mode.

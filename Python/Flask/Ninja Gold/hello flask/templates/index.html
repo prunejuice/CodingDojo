@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div id="container">
+        <div class="row">
+          <div class="subcontents content-wrapper">
+            <h2>Current Gold</h2>
+            <h3>{{ count }}</h3>
+            <form action="/process_money" method="post">
+              <input type="hidden" name="action" value="reset">
+              <button type="submit">Reset</button>
+            </form>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="subcontents content-wrapper">
+            <div class="content">
+
+            <div class="content-header">
+              <h2>Farm</h2>
+            </div>
+
+            <div class="content-block">
+              <p>
+               (earns 10-20 golds)
+              </p>
+            </div>
+            <div class="content-block">
+              <form action="/process_money" method="post">
+                <input type="hidden" name="action" value="farm">
+                <button type="submit">Find Gold!</button>
+              </form>
+            </div>
+            </div>
+          </div>
+          <div class="subcontents content-wrapper">
+            <div class="content">
+              <div class="content-header">
+                <h2>Cave</h2>
+              </div>
+              <div class="content-block">
+                <p>
+                  (earns 5-10 gold)
+                </p>
+              </div>
+              <div class="content-block">
+                <form action="/process_money" method="post">
+                  <input type="hidden" name="action" value="cave">
+                  <button type="submit">Find Gold!</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="subcontents content-wrapper">
+            <div class="content">
+              <div class="content-header">
+                <h2>House</h2>
+              </div>
+              <div class="content-block">
+                <p>
+                  (earns 2-5 gold)
+                </p>
+              </div>
+              <div class="content-block">
+                <form action="/process_money" method="post">
+                  <input type="hidden" name="action" value="house">
+                  <button type="submit">Find Gold!</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="subcontents content-wrapper">
+            <div class="content">
+              <div class="content-header">
+                <h2>Casino</h2>
+              </div>
+              <div class="content-block">
+                <p>
+                  (earns/takes 0-50 gold)
+                </p>
+              </div>
+              <div class="content-block">
+                <form action="/process_money" method="post">
+                  <input type="hidden" name="action" value="casino">
+                  <button type="submit">Find Gold!</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          {% for entry in history %}
+            {% if entry.value < 0 %}
+              <p style="color: red">
+                  {{ entry.message }}
+              </p>
+
+            {% else %}
+              <p style="color: green">
+                {{ entry.message }}
+              </p>
+            {% endif %}
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+
+
+  </body>
+</html>
