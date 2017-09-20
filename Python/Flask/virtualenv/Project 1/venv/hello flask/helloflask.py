@@ -9,16 +9,18 @@ def index():
     return render_template("index.html", count = session [ 'count' ])  # Return 'Hello World!' to the response.
 
 
-@app.route('/reset', methods=['POST'])
-def reset():
-    # global name
-    session[ 'count' ] = 0
-    return redirect('/')
+# @app.route('/reset', methods=['POST'])
+# def reset():
+#     # global name
+#     session[ 'count' ] = 0
+#     return redirect('/')
 
-
-@app.route('/result', methods=['POST'])
+@app.route('/', methods=['POST'])
 def result():
-    session [ 'count'] += 1
+    if request.form['action'] == "increment":
+        session['count'] += 1
+    elif request.form['action'] == "reset":
+        session['count'] = 0
     return redirect('/')
 
 
