@@ -14,19 +14,30 @@ def ninjas():
 
     if session.get('ninjas') is None:
         session['ninjas'] = []
-    session['ninjas'].append({'name': 'donatello.jpg'})
-    session['ninjas'].append({'name':'michaelangelo.jpg'})
-    session['ninjas'].append({'name':'leonardo.jpg'})
-    session['ninjas'].append({'name':'michaelangelo.jpg'})
+    session['ninjas'].append({'name': 'images/donatello.jpg'})
+    session['ninjas'].append({'name':'images/leonardo.jpg'})
+    session['ninjas'].append({'name':'images/michelangelo.jpg'})
+    session['ninjas'].append({'name':'images/raphael.jpg'})
     return render_template("ninjas.html", ninjas = session['ninjas'])
 
 
 
-@app.route('/ninja/<vararg>')
+@app.route('/ninjas/<vararg>')
 def handler_function(vararg):
-    if vararg =
+    session['ninjas'] = []
+    if vararg == 'orange':
+        session['ninjas'].append({'name': 'images/michelangelo.jpg'})
+    elif vararg == 'blue':
+        session['ninjas'].append({'name': 'images/leonardo.jpg'})
+    elif vararg == 'red':
+        session['ninjas'].append({'name': 'images/raphael.jpg'})
+    elif vararg == 'purple':
+        session['ninjas'].append({'name': 'images/donatello.jpg'})
+    else:
+        session['ninjas'].append({'name': 'images/notapril.jpg'}) 
 
-    return render_template
+
+    return render_template("ninjas.html", ninjas = session['ninjas'])
 
 
 app.run(debug=True)

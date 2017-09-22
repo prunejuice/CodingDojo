@@ -7,7 +7,7 @@
   <body>
     <div>
       {% for entry in ninjas %}
-        <img src='static/images/{{ entry.name }}' width ='25%'/>
+        <img src= "{{ url_for('static', filename= entry.name ) }}" width ='25%'/>
       {% endfor %}
     </div>
   </body>
