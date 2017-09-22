@@ -8,12 +8,14 @@
   <body>
     <h1>Counter</h1>
      <h2>{{ count }}</h2>
-     <form action="/result" method="post">
+     <form action="/" method="post">
+       <input type="hidden" name="action" value="increment">
        <button type="submit">Increment</button>
      </form>
-     <form action="/reset" method="post">
+     <form action="/" method="post">
+       <input type="hidden" name="action" value="reset">
        <button type="submit">Reset</button>
      </form>
-
+     <textarea>{{ history }}</textarea>
   </body>
 </html>
