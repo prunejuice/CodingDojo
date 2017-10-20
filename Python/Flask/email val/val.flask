@@ -5,7 +5,21 @@ app.secret_key = 'bcxjnmkbnhbfrvsghfn'
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    session[ 'count' ] += 1
+    return render_template("index.html", count = session [ 'count' ])  # Return 'Hello World!' to the response.
+
+
+@app.route('/reset', methods=['POST'])
+def reset():
+    # global name
+    session[ 'count' ] = 0
+    return redirect('/')
+
+
+@app.route('/result', methods=['POST'])
+def result():
+    session [ 'count'] += 1
+    return redirect('/')
 
 
 app.run(debug=True)      # Run the app in debug mode.
