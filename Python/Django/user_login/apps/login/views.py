@@ -14,7 +14,7 @@ def register(request):
     #     if len(errors):
     #         for len(errors):
     #             for tag, error in errors.iteritimes():
-    #                 messages.error(request, error, extra_tags=tag)
+    #                 messages.error(request, error, extra_tags=tag)c
 
 
         if request.POST['password'] == request.POST['confirmpassword']:
