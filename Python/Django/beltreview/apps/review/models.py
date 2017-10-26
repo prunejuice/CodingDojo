@@ -12,18 +12,25 @@ class UserManager(models.Manager):
         errors = []
         user = None
 
-        #Email exists
         if not self.filter(email_address = post_data['email_address']):
             errors.append('Invalid credentials')
-        #correct password
+
+        else:
+            user = self.get(email_address=post_data['email_address'])
+            if not bcrypt.checkpw(post_data['password'].encode(), user.password.encode()):
+                errors.append('Invalid credentials')
+
+
+        return errors, user
 
 
     def validate_registration(self, post_data):
 
         errors = []
+        user = None
         for field, value in post_data.iteritems():
             if len(value) < 1:
-                error.append("Please fill in all fields")
+                errors.append("Please fill in all fields")
                 break
         if len(post_data['full_name']) < 2:
             errors.append("Name field must be 2 or more characters")
@@ -42,13 +49,13 @@ class UserManager(models.Manager):
 
         if not errors:
             hashed_pw = bcrypt.hashpw(post_data['password'].encode(), bcrypt.gensalt())
-            self.create(
+            user = self.create(
                 full_name = post_data['full_name'],
                 username = post_data['username'],
                 email_address = post_data['email_address'],
                 password = hashed_pw,
                 )
-        return errors
+        return errors, user
 
 
 class User(models.Model):
