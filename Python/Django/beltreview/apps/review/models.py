@@ -7,22 +7,31 @@ import bcrypt
 
 class UserManager(models.Manager):
 
-    def validate_login(self, post_data):
 
+    def validate_login_params(self, post_data):
         errors = []
+
+        # check you have email and password
+        for field, value in post_data.iteritems():
+            if len(value) < 1:
+                errors.append("Please fill in all fields")
+
+        return errors
+
+    def find_user(self, post_data):
+
         user = None
 
         if not self.filter(email_address = post_data['email_address']):
-            errors.append('Invalid credentials')
+            return user
+            #errors.append('Invalid credentials')
 
         else:
             user = self.get(email_address=post_data['email_address'])
             if not bcrypt.checkpw(post_data['password'].encode(), user.password.encode()):
-                errors.append('Invalid credentials')
+                return user#errors.append('Invalid credentials')
 
-
-        return errors, user
-
+        return user
 
     def validate_registration(self, post_data):
 

@@ -25,9 +25,11 @@
                     {% if messages %}
                       <ul class="list-unstyled">
                       {% for message in messages %}
-                        <li>
-                          <span class="text-danger align-middle"><i class="fa fa-close"></i>{{ message }}</span>
-                        </li>
+                        {% if 'login' in message.tags %}
+                          <li>
+                            <span class="text-danger align-middle"><i class="fa fa-close"></i>{{ message }}</span>
+                          </li>
+                        {% endif %}
                       {% endfor %}
                       </ul>
                     {% endif %}
@@ -39,7 +41,7 @@
                     <div class="form-group has-danger">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                            <input type="text" name="email" class="form-control" id="email"
+                            <input type="text" name="email_address" class="form-control" id="email"
                                    placeholder="you@example.com" required autofocus>
                         </div>
                     </div>
@@ -135,9 +137,11 @@
                         {% if messages %}
                           <ul class="list-unstyled">
                           {% for message in messages %}
-                            <li>
-                              <span class="text-danger align-middle"><i class="fa fa-close"></i>{{ message }}</span>
-                            </li>
+                            {% if 'register' in message.tags %}
+                              <li>
+                                <span class="text-danger align-middle"><i class="fa fa-close"></i>{{ message }}</span>
+                              </li>
+                            {% endif %}
                           {% endfor %}
                           </ul>
                         {% endif %}

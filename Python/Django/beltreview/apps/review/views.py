@@ -14,22 +14,34 @@ def register(request):
 
     if errors_user[0]:
         for fail in errors_user[0]:
-            messages.error(request, fail)
+            messages.error(request, fail, "register")
         return redirect('/')
     request.session['id'] = errors_user[1].id
     return redirect('/')
 
 
 def login(request):
-    errors_login = User.objects.validate_login(request.POST)
 
-    if errors_login[0]:
-        for fail in errors_login[0]:
-            messages.error(request, fail)
+    # Check parameters are valid for login
+    errors_login_params = User.objects.validate_login_params(request.POST)
 
+    # There were errors in the parameters
+    if errors_login_params:
+        for fail in errors_login_params:
+            messages.error(request, fail, "login")
         return redirect('/')
 
-    request.session['id'] = errors_login[1].id
+    # Check for user in DB
+    user_record = User.objects.find_user(request.POST)
+
+    # No user returned so tell user invalid login
+    if user_record is None:
+        messages.error(request, 'Invalid Credentials', "login")
+        return redirect('/')
+
+    # We have a user
+    request.session['id'] = user_record.id
+
     return redirect('/success')
 
 
