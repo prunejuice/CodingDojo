@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojadachi</title>
+</head>
+<body>
+    <h1>Dojodachi</h1>
+    <p>Fullness:<span>@ViewBag.Fullness</span> Happiness:<span>@ViewBag.Happiness</span> Meals:<span>@ViewBag.Meals</span>Energy:<span> @ViewBag.Energy</span></p>
+    <div>
+      <img src="">
+      <p></p>
+    </div>
+
+    <form action="/Submit" method="POST">
+        <input type="hidden" name="name" value="Feed">
+        <input type="submit" value="Feed!">
+    </form>
+    <form action="/Submit" method="POST">
+        <input type="hidden" name="name" value="Play">
+        <input type="submit" value="Play!">
+    </form>
+    <form action="/Submit" method="POST">
+        <input type="hidden" name="name" value="Work">
+        <input type="submit" value="Work!">
+    </form>
+    <form action="/Submit" method="POST">
+        <input type="hidden" name="name" value="Sleep">
+        <input type="submit" value="Sleep!">
+    </form>
+</body>
+</html>
